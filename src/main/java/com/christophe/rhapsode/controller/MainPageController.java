@@ -42,6 +42,11 @@ public class MainPageController {
 		model.addAttribute("languages",languages);
 		return "index";
 	}
+	
+	@RequestMapping("/{article}")
+	public String articleDetail(Model model) {
+		return "article";
+	}
 
 	/*
 	 * @PostMapping("/") public String handleFileUpload(@RequestParam("file")

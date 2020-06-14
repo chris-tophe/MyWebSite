@@ -7,7 +7,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 
 import com.christophe.rhapsode.controller.StorageConfig;
-import com.christophe.rhapsode.controller.StorageService;
 import com.christophe.rhapsode.dao.ArticlesDao;
 import com.christophe.rhapsode.dao.LanguageDao;
 import com.christophe.rhapsode.dao.PhotosDao;
@@ -23,10 +22,6 @@ public class RhapsodeApplication {
 		SpringApplication.run(RhapsodeApplication.class, args);
 	}
 
-	/*
-	 * @Bean CommandLineRunner init(StorageService storageService) { return (args)
-	 * -> { storageService.deleteAll(); storageService.init(); }; }
-	 */
 	@Bean
 	CommandLineRunner createLangage(LanguageDao languageDao) {
 		return arg -> {

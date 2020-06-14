@@ -3,10 +3,10 @@ package com.christophe.rhapsode.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -24,18 +24,16 @@ public class Article {
 
 	private String url;
 
-	@ElementCollection
 	@OneToMany
 	private List<Photo> photo;
 	
-	@ElementCollection
-	@OneToMany
-	private List<Language> language;
+	@ManyToMany 
+	private List<Language> languages;
 
 	public Article() {
 		count++;
 		photo = new ArrayList<Photo>();
-		language = new ArrayList<Language>();
+		languages = new ArrayList<Language>();
 	}
 
 	static public int getCount() {
@@ -78,18 +76,18 @@ public class Article {
 		this.photo.add(photo);
 	}
 	
-	public List<Language> getLanguage() {
-		return language;
+	public List<Language> getLanguages() {
+		return languages;
 	}
 
-	public void addLanguage(Language language) {
-		this.language.add(language);
+	public void addLanguages(Language language) {
+		this.languages.add(language);
 	}
 
 	@Override
 	public String toString() {
 		return "Article [id=" + id + ", title=" + title + ", description=" + description + ", url=" + url + ", photo="
-				+ photo + ", language=" + language + "]";
+				+ photo + ", language=" + languages + "]";
 	}
 
 

@@ -2,6 +2,7 @@
 
 Article *-- Photo
 Article *-- Language
+Article --o Language
 
 class Article {
 
@@ -10,7 +11,7 @@ class Article {
     - description : String
     - url : String
     - photo : List<Photo>
-    - langage : List<Language>
+    - langages : List<Language>
 
     + Article()
     + getId() : int
@@ -22,8 +23,8 @@ class Article {
     + setUrl(String url) : void
     + getPhoto() : List<Photo>
     + addPhoto(Photo photo) : void
-    + getLanguage() : List<Photo>
-    + addLanguage(Language langage) : void
+    + getLanguages() : List<Photo>
+    + addLanguages(Language langage) : void
 }
 
 
@@ -45,12 +46,15 @@ class Language {
     -id : int
     -name : String
     -image : String
+    -articles : List<Article>
 
     + getId() : int
     +getName() :String
     +setName(String name) :void
     +getImage() : String
     +setImage(String url) : void
+    + getArticles() : List<Article>
+    + addArticles(Article article) : void
 }
 
 @enduml

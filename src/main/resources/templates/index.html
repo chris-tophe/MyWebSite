@@ -20,8 +20,8 @@
 					<nav>
 						<ul>
 							<li><a href="#intro">Bienvenue</a></li>
-							<li><a href="#one">Projets</a></li>
-							<li><a href="#two">Technos</a></li>
+							<li><a href="#one">Technos</a></li>
+							<li><a href="#two">Projets</a></li>
 							<li><a href="#three">Contact</a></li>
 						</ul>
 					</nav>
@@ -44,7 +44,23 @@
 					</section>
 
 				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
+					<section id="one" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Technologies connues et niveau de maîtrise</h2>
+							<div class="features">
+								<section th:each = "language : ${languages}">
+									<!--   <span class="icon solid major fa-code"></span> -->
+									<span class="image left"><img th:src="${language.image}"></span>
+									<h3 th:text ="${language.name}"></h3>
+									<p>Utilisé dans	<span th:text="${#lists.size(language.articles)}"></span> projets</p>					
+								</section>
+							</div>
+						</div>
+					</section>
+					
+				<!-- Two -->
+
+					<section id="two" class="wrapper style2 spotlights">
 						<section th:each="article : ${articles}">
 							<a href="#" class="image"><img th:src="${article.photo[0].url}" alt="" data-position="center center" /></a>
 							<div class="content">
@@ -53,26 +69,12 @@
 									<p th:text = ${article.description}></p>
 									<ul class="actions">
 										<li><a th:href="@{|/${article.title}|}" class="button">Détail</a></li>
+										<li th:each="language : ${article.languages}"><p th:text=${language.name}></p></li>
 									</ul>
 								</div>
 							</div>
 						</section>
 					</section>
-					
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Technologies connues et niveau de maîtrise</h2>
-							<div class="features">
-								<section th:each = "language : ${languages}">
-									<!--   <span class="icon solid major fa-code"></span> -->
-									<span class="image left"><img th:src="${language.image}"></span>
-									<h3 th:text ="${language.name}"></h3>								
-								</section>
-							</div>
-						</div>
-					</section>
-
 				<!-- Three -->
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">

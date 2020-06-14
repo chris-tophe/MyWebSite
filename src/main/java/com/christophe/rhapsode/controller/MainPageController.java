@@ -1,6 +1,8 @@
 package com.christophe.rhapsode.controller;
 
+import java.security.cert.PKIXRevocationChecker.Option;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -44,18 +46,13 @@ public class MainPageController {
 	}
 	
 	@RequestMapping("/{article}")
-	public String articleDetail(Model model) {
-		return "article";
+	public String articleDetail(Model model , @PathVariable String article) {
+		Article findedArticle = articlesRepo.findByTitle(article);
+		if ( findedArticle != null) {
+			model.addAttribute("article", findedArticle);
+			return "article";
+		}
+		return "error";
 	}
-
-	/*
-	 * @PostMapping("/") public String handleFileUpload(@RequestParam("file")
-	 * MultipartFile file, RedirectAttributes redirectAttributes) {
-	 * 
-	 * storageService.store(file); redirectAttributes.addFlashAttribute("message",
-	 * "You successfully uploaded " + file.getOriginalFilename() + "!");
-	 * 
-	 * return "redirect:/"; }
-	 */
 
 }

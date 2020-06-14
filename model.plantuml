@@ -1,0 +1,56 @@
+@startuml MonsiteWebModel
+
+Article *-- Photo
+Article *-- Language
+
+class Article {
+
+    - id : int
+    - title : String 
+    - description : String
+    - url : String
+    - photo : List<Photo>
+    - langage : List<Language>
+
+    + Article()
+    + getId() : int
+    + getTitle() : String
+    + setTitle(String title) : void
+    + getDescription() : String
+    + setDescription(String description) : void
+    + getUrl() : String
+    + setUrl(String url) : void
+    + getPhoto() : List<Photo>
+    + addPhoto(Photo photo) : void
+    + getLanguage() : List<Photo>
+    + addLanguage(Language langage) : void
+}
+
+
+
+class Photo {
+    - id : int
+    - url : String
+    - legend : String
+
+    + Photo()
+    + getId() : int
+    + getUrl() : String
+    + setUrl(String url)
+    + getLegend() : String
+    + setLegend(String legend)
+}
+
+class Language {
+    -id : int
+    -name : String
+    -image : String
+
+    + getId() : int
+    +getName() :String
+    +setName(String name) :void
+    +getImage() : String
+    +setImage(String url) : void
+}
+
+@enduml

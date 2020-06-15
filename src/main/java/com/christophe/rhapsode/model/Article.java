@@ -25,14 +25,14 @@ public class Article {
 	private String url;
 
 	@OneToMany
-	private List<Photo> photo;
+	private List<Photo> photos;
 	
 	@ManyToMany 
 	private List<Language> languages;
 
 	public Article() {
 		count++;
-		photo = new ArrayList<Photo>();
+		photos = new ArrayList<Photo>();
 		languages = new ArrayList<Language>();
 	}
 
@@ -68,12 +68,12 @@ public class Article {
 		this.url = url;
 	}
 
-	public List<Photo> getPhoto() {
-		return photo;
+	public List<Photo> getPhotos() {
+		return photos;
 	}
 
-	public void addPhoto(Photo photo) {
-		this.photo.add(photo);
+	public void addPhotos(Photo photo) {
+		this.photos.add(photo);
 	}
 	
 	public List<Language> getLanguages() {
@@ -87,7 +87,7 @@ public class Article {
 	@Override
 	public String toString() {
 		return "Article [id=" + id + ", title=" + title + ", description=" + description + ", url=" + url + ", photo="
-				+ photo + ", language=" + languages + "]";
+				+ photos + ", language=" + languages + "]";
 	}
 
 

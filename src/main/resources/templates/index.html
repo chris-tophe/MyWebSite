@@ -49,10 +49,9 @@
 							<h2>Technologies connues et niveau de maîtrise</h2>
 							<div class="features">
 								<section th:each = "language : ${languages}">
-									<!--   <span class="icon solid major fa-code"></span> -->
-									<span class="image left"><img th:src="${language.image}"></span>
+									<span class="image left" ><img th:src="${language.image}"></span>
 									<h3 th:text ="${language.name}"></h3>
-									<p>Utilisé dans	<span th:text="${#lists.size(language.articles)}"></span> projets</p>					
+									<p>Utilisé dans	<span th:text="${#lists.size(language.articles)}"></span> projets</p>				
 								</section>
 							</div>
 						</div>
@@ -62,14 +61,20 @@
 
 					<section id="two" class="wrapper style2 spotlights">
 						<section th:each="article : ${articles}">
-							<a href="#" class="image"><img th:src="${article.photo[0].url}" alt="" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
 									<h2 th:text = ${article.title}></h2>
 									<p th:text = ${article.description}></p>
 									<ul class="actions">
 										<li><a th:href="@{|/${article.title}|}" class="button">Détail</a></li>
-										<li th:each="language : ${article.languages}"><p th:text=${language.name}></p></li>
+									</ul>
+									<ul class="actions">
+										<li th:each="language : ${article.languages}">
+											<span>
+												<img th:src="${language.image}" height="30" >
+											</span>
+											
+										</li>
 									</ul>
 								</div>
 							</div>

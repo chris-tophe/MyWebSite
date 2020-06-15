@@ -83,7 +83,7 @@ public class RhapsodeApplication {
 			p.setUrl("");;
 			p.setLegend("");
 			photosDao.save(p);
-			article.addPhoto(p);
+			article.addPhotos(p);
 			
 			articleRepo.save(article);
 			
@@ -104,7 +104,7 @@ public class RhapsodeApplication {
 			p.setUrl("");;
 			p.setLegend("");
 			photosDao.save(p);
-			article.addPhoto(p);
+			article.addPhotos(p);
 			
 			articleRepo.save(article);
 			
@@ -112,7 +112,7 @@ public class RhapsodeApplication {
 			article.setTitle("tatatam");
 			article.setUrl("");
 			article.setDescription(
-					"Application de gestion des garantie consommant une API Rest PHP");
+					"Application de gestion de garanties consommant une API Rest PHP");
 			
 			language = languageDao.findByName("Flutter");
 			article.addLanguages(language);
@@ -125,10 +125,34 @@ public class RhapsodeApplication {
 			
 			
 			p = new Photo();
-			p.setUrl("");;
-			p.setLegend("");
+			p.setUrl("images/tatatam0.png");;
+			p.setLegend("Acceuil");
 			photosDao.save(p);
-			article.addPhoto(p);
+			article.addPhotos(p);
+			
+			p = new Photo();
+			p.setUrl("images/tatatam1.png");;
+			p.setLegend("Drawer menu");
+			photosDao.save(p);
+			article.addPhotos(p);
+			
+			p = new Photo();
+			p.setUrl("images/tatatam2.png");;
+			p.setLegend("Main menu");
+			photosDao.save(p);
+			article.addPhotos(p);
+			
+			p = new Photo();
+			p.setUrl("images/tatatam3.png");;
+			p.setLegend("Garantie");
+			photosDao.save(p);
+			article.addPhotos(p);
+			
+			p = new Photo();
+			p.setUrl("images/tatatam4.png");;
+			p.setLegend("Menu inventaire");
+			photosDao.save(p);
+			article.addPhotos(p);
 			
 			articleRepo.save(article);
 			

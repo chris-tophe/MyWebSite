@@ -1,146 +1,185 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Site personnel de chris-tophe</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="css/main.css" />
-		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="fr">
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Bienvenue</a></li>
-							<li><a href="#one">Technos</a></li>
-							<li><a href="#two">Projets</a></li>
-							<li><a href="#three">Contact</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+<head>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Personnal Website of Chris-tophe">
+  <meta name="author" content="Christophe Loyer">
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>chris-tophe</h1>
-							<p>Développeur Java</p>
-							<p>Développeur Mobile</p>
-							<ul class="actions">
-								<li><a href="#one" class="button scrolly">En savoir plus !</a></li>
-							</ul>
-						</div>
-					</section>
+  <title>Site de Chris-tophe</title>
 
-				<!-- One -->
-					<section id="one" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Technologies connues et niveau de maîtrise</h2>
-							<div class="features">
-								<section th:each = "language : ${languages}">
-									<span class="image left" ><img th:src="${language.image}"></span>
-									<h3 th:text ="${language.name}"></h3>
-									<p>Utilisé dans	<span th:text="${#lists.size(language.articles)}"></span> projets</p>				
-								</section>
-							</div>
-						</div>
-					</section>
-					
-				<!-- Two -->
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-					<section id="two" class="wrapper style2 spotlights">
-						<section th:each="article : ${articles}">
-							<div class="content">
-								<div class="inner">
-									<h2 th:text = ${article.title}></h2>
-									<p th:text = ${article.description}></p>
-									<ul class="actions">
-										<li><a th:href="@{|/${article.title}|}" class="button">Détail</a></li>
-									</ul>
-									<ul class="actions">
-										<li th:each="language : ${article.languages}">
-											<span>
-												<img th:src="${language.image}" height="30" >
-											</span>
-											
-										</li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Contact</h2>
-							<p>Envoyez moi un message ou contactez moi sur les réseaux.</p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Sur les réseaux</h3>
-											<ul class="icons">
-												<li><a href="https://github.com/chris-tophe/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="https://www.linkedin.com/in/christophe-l-41b912135/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
-			</div>
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; MyWebSite chris-tophe 2020. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+  <!-- Custom styles for this template -->
+  <link href="css/new-age.css" rel="stylesheet">
 
-		<!-- Scripts -->
-			<script src="js/jquery.min.js"></script>
-			<script src="js/jquery.scrollex.min.js"></script>
-			<script src="js/jquery.scrolly.min.js"></script>
-			<script src="js/browser.min.js"></script>
-			<script src="js/breakpoints.min.js"></script>
-			<script src="js/util.js"></script>
-			<script src="js/main.js"></script>
+</head>
 
-	</body>
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Site de chris-tophe</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#technos">Technos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#projets">Projets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
+            <h1 class="mb-5">Site Web de chris-tophe</h1>
+            <h2 class="mb-5">Développeur Java</h2>
+            <h2 class="mb-5">Développeur Mobile</h2>
+            <a href="#technos" class="btn btn-outline btn-xl js-scroll-trigger">En savoir plus</a>
+          </div>
+        </div>
+        <div class="col-lg-5 my-auto text-center">
+        	<img src="images/welcome.png" class="img-fluid" alt="">    
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="features" id="technos">
+    <div class="container">
+      <div class="section-heading text-center">
+        <h2>Technologies connues:</h2>
+        <p class="text-muted">Et le nombre de projets réalisé</p>
+        <hr>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 my-auto">
+          <div class="container-fluid">
+            <div class="row">
+              <div th:each="language : ${languages}" class="col-lg-4">
+                <div class="feature-item">
+                	<div style="height: 5rem">
+                		<img th:src="${language.image}" class="img-fluid h-100" alt="">
+                	</div>
+                  <h3 th:text="${language.name}"></h3>
+                  <p class="text-muted">Utilisé dans <span th:text="${#lists.size(language.articles)}"}></span> projets.</p>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section th:each="article : ${articles}" class="cta bg-info" id="projets">
+    <div class="cta-content row col-lg-11">
+      <div class="container col-lg-8">
+        <h2 th:text="${article.title}"></h2>
+        <p th:text="${article.description}" class ="text-white mb-5"></p>
+       
+	        <ul class="list-inline" >
+		        <li class="list-inline-item">
+		        	<a  th:if="${article.url != ''}" th:href="${article.url}" target="_blank" class="btn btn-outline">
+		        	<em class="icon-social-github"></em>
+		        	voir sur gitHub</a>
+		        </li>
+		        <li class="list-inline-item" th:each="language : ${article.languages}" style=" height: 3rem;">
+		          <div class="h-100 text-center">
+		          <img th:src="${language.image}"class="img-fluid h-100">
+		          </div>
+		        </li>
+	      	</ul>
+      </div>
+    
+      <div th:id="'carouselControls'+${article.id}" class="carousel slide col-lg-3" data-ride="carousel">
+		  <div class="carousel-inner">
+		    <div th:each="photo , iStat : ${article.photos}" th:class="${iStat.first}? 'active carousel-item' : ' carousel-item' ">
+		      <img class="d-block w-100" th:src="${photo.url}" th:alt="${photo.legend}">
+		    </div>
+		  </div>
+		  <a class="carousel-control-prev" th:href="'#carouselControls'+${article.id}" role="button" data-slide="prev">
+		    <span class="carousel-control-prev-icon bg-dark rounded" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="carousel-control-next" th:href="'#carouselControls'+${article.id}" role="button" data-slide="next">
+		    <span class="carousel-control-next-icon bg-dark rounded " aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		</div>
+ 	</div>
+    <div class="overlay"></div>
+  </section>
+
+  <section class="contact " id="contact">
+    <div class="container">
+      <h2>Sur les réseaux</h2>
+      <ul class="list-inline list-social">
+        <li class="list-inline-item bg-info">
+          <a href="https://www.linkedin.com/in/christophe-l-41b912135/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        <li class="list-inline-item bg-dark">
+          <a href="https://github.com/chris-tophe/" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Chris-tophe. All Rights Reserved.</p>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="https://spring.io/" target="_blank">Powered by Spring</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="http://startbootstrap.com/" target="_blank">Template by Startbootstrap</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/new-age.min.js"></script>
+
+</body>
+
 </html>

@@ -285,8 +285,8 @@ section.features .feature-item i {
 section.cta {
   position: relative;
   padding: 250px 0;
- background: rgb(0,0,0);
-background: linear-gradient(118deg, rgba(0,0,0,1) 0%, rgba(139,139,139,1) 63%, rgba(179,179,179,1) 98%); 
+  background: rgb(54,54,54);
+  background: linear-gradient(118deg, rgba(54,54,54,1) 0%, rgba(139,139,139,1) 49%, rgba(226,226,226,1) 100%); 
   background-position: center;
   background-size: cover;
 }

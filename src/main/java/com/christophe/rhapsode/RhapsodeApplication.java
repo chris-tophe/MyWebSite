@@ -80,8 +80,14 @@ public class RhapsodeApplication {
 			article.addLanguages(language);
 			
 			Photo p = new Photo();
-			p.setUrl("");;
-			p.setLegend("nopic");
+			p.setUrl("images/vmc0.png");;
+			p.setLegend("MainPage");
+			photosDao.save(p);
+			article.addPhotos(p);
+			
+			p = new Photo();
+			p.setUrl("images/vmc1.png");;
+			p.setLegend("addBuilding");
 			photosDao.save(p);
 			article.addPhotos(p);
 			
@@ -101,8 +107,26 @@ public class RhapsodeApplication {
 			
 			
 			p = new Photo();
-			p.setUrl("");;
-			p.setLegend("nopic");
+			p.setUrl("images/frigostock0.png");;
+			p.setLegend("Login");
+			photosDao.save(p);
+			article.addPhotos(p);
+			
+			p = new Photo();
+			p.setUrl("images/frigostock1.png");;
+			p.setLegend("Frigo");
+			photosDao.save(p);
+			article.addPhotos(p);
+			
+			p = new Photo();
+			p.setUrl("images/frigostock2.png");;
+			p.setLegend("List");
+			photosDao.save(p);
+			article.addPhotos(p);
+			
+			p = new Photo();
+			p.setUrl("images/frigostock3.png");;
+			p.setLegend("Alert");
 			photosDao.save(p);
 			article.addPhotos(p);
 			

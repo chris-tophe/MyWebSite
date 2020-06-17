@@ -81,7 +81,7 @@ public class RhapsodeApplication {
 			
 			Photo p = new Photo();
 			p.setUrl("");;
-			p.setLegend("");
+			p.setLegend("nopic");
 			photosDao.save(p);
 			article.addPhotos(p);
 			
@@ -102,7 +102,7 @@ public class RhapsodeApplication {
 			
 			p = new Photo();
 			p.setUrl("");;
-			p.setLegend("");
+			p.setLegend("nopic");
 			photosDao.save(p);
 			article.addPhotos(p);
 			

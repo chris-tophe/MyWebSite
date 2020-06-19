@@ -12,6 +12,8 @@ import com.christophe.rhapsode.model.Article;
 import com.christophe.rhapsode.model.Language;
 import com.christophe.rhapsode.model.Photo;
 
+//TODO make 0 check on languages ans remove s on 1 projet 
+
 @SpringBootApplication
 public class RhapsodeApplication {
 

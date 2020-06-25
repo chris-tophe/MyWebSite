@@ -89,7 +89,7 @@
                 		<img th:src="${language.image}" class="img-fluid h-100" alt="">
                 	</div>
                   <h3 th:text="${language.name}"></h3>
-                  <p class="text-muted">Utilisé dans <span th:text="${#lists.size(language.articles)}"}></span> projet<span th:unless="${#lists.size(language.articles) == 1}">s</span>.</p>
+                  <p class="text-muted">Utilisé dans <span th:text="${#lists.size(language.articles)}"}></span> projet<span th:unless="${#lists.size(language.articles) == 1}">s</span></p>
                 </div>
               </div> 
             </div>

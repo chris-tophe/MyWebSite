@@ -1,15 +1,10 @@
 package com.christophe.rhapsode.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.christophe.rhapsode.dao.ArticlesDao;
 import com.christophe.rhapsode.dao.LanguageDao;
 import com.christophe.rhapsode.model.Article;
@@ -34,14 +29,5 @@ public class MainPageController {
 		return "index";
 	}
 	
-	@RequestMapping("/{article}")
-	public String articleDetail(Model model , @PathVariable String article) {
-		Article findedArticle = articlesRepo.findByTitle(article);
-		if ( findedArticle != null) {
-			model.addAttribute("article", findedArticle);
-			return "article";
-		}
-		return "error";
-	}
 
 }

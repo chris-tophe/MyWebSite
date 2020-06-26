@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.chris-tophe</groupId>
 	<artifactId>rhapsode</artifactId>
-	<version>0.1.3</version>
+	<version>0.1.4</version>
 	<name>rhapsode</name>
 	<description>MyPersonalWebSite</description>
 

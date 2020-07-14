@@ -1,33 +1,23 @@
 package com.christophe.rhapsode.model;
 
+import org.springframework.data.annotation.Id;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-
-@Entity
 public class Article {
 
 	private static int count = 0;
 
 	@Id
-	@GeneratedValue
-	private int id;
-
 	private String title;
 
 	private String description;
 
 	private String url;
 
-	@OneToMany
 	private List<Photo> photos;
-	
-	@ManyToMany 
+
 	private List<Language> languages;
 
 	public Article() {
@@ -38,10 +28,6 @@ public class Article {
 
 	static public int getCount() {
 		return count;
-	}
-
-	public int getId() {
-		return id;
 	}
 
 	public String getTitle() {
@@ -86,7 +72,7 @@ public class Article {
 
 	@Override
 	public String toString() {
-		return "Article [id=" + id + ", title=" + title + ", description=" + description + ", url=" + url + ", photo="
+		return "Article [ title=" + title + ", description=" + description + ", url=" + url + ", photo="
 				+ photos + ", language=" + languages + "]";
 	}
 

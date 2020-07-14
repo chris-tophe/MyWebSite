@@ -1,11 +1,9 @@
 package com.christophe.rhapsode.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.christophe.rhapsode.model.Article;
 
-public interface ArticlesDao extends JpaRepository<Article, Integer> {
-	
-	Article findByTitle (String title);
+public interface ArticlesDao extends MongoRepository<Article, String> {
 
 }

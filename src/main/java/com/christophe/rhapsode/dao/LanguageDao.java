@@ -1,11 +1,11 @@
 package com.christophe.rhapsode.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.christophe.rhapsode.model.Language;
 
-public interface LanguageDao extends JpaRepository<Language, Integer>{
-	
-	Language findByName(String name);
+public interface LanguageDao extends MongoRepository<Language, String> {
+
+	Language findOneByName(String name);
 
 }

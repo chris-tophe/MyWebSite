@@ -1,30 +1,20 @@
 package com.christophe.rhapsode.model;
 
+import org.springframework.data.annotation.Id;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-
-@Entity
 public class Language {
 	
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
-	
     private String name;
     
     private String image;
-    
-    @ManyToMany(mappedBy = "languages")
+
     private List<Article> articles;
-    
-   
+
     public Language() {
     	articles = new ArrayList<Article>();
     }
@@ -34,10 +24,6 @@ public class Language {
 		this.name = name;
 	}
     
-	public int getId() {
-		return id;
-	}
-
 	public String getName() {
 		return name;
 	}

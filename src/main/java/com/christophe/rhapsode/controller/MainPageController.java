@@ -1,6 +1,8 @@
 package com.christophe.rhapsode.controller;
 
 import java.util.List;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,9 +21,13 @@ public class MainPageController {
 	
 	@Autowired
 	LanguageDao languagesDao;
+	
+	
+
 
 	@RequestMapping("/")
 	public String index(Model model) {
+		
 		List<Article> articles = articlesRepo.findAll();
 		List<Language> languages = languagesDao.findAll();
 		model.addAttribute("articles", articles);

@@ -12,7 +12,6 @@ import com.christophe.rhapsode.model.Article;
 import com.christophe.rhapsode.model.Language;
 import com.christophe.rhapsode.model.Photo;
 
-//TODO make 0 check on languages ans remove s on 1 projet 
 
 @SpringBootApplication
 public class RhapsodeApplication {
@@ -32,7 +31,7 @@ public class RhapsodeApplication {
 			language.setImage("logo/javaFXLogo.png");
 			languageDao.save(language);
 			
-			language = new Language("Spring Boot");
+			language = new Language("Spring");
 			language.setImage("logo/springLogo.png");
 			languageDao.save(language);
 			
@@ -75,7 +74,7 @@ public class RhapsodeApplication {
 			language = languageDao.findByName("Java Fx");
 			article.addLanguages(language);
 			
-			language = languageDao.findByName("Spring Boot");
+			language = languageDao.findByName("Spring");
 			article.addLanguages(language);
 			
 			language = languageDao.findByName("Api Rest");
@@ -181,8 +180,49 @@ public class RhapsodeApplication {
 			article.addPhotos(p);
 			
 			articleRepo.save(article);
-			
-			
+
+			article =  new Article();
+			article.setTitle("EasyQuoteMaker");
+			article.setDescription("Front-End Flutter (web desktop et mobile) pour la réalisation de devis.");
+			article.setUrl("https://github.com/chris-tophe/EasyQuoteMakerService");
+			language = languageDao.findByName("Flutter");
+			article.addLanguages(language);
+
+			language = languageDao.findByName("Api Rest");
+			article.addLanguages(language);
+
+			articleRepo.save(article);
+
+
+			article =  new Article();
+			article.setTitle("EasyQuoteMakerService");
+			article.setDescription("Back-End Java pour EasyQuoteMaker. Authentification et Authorisation en HTTPS.");
+			article.setUrl("https://github.com/chris-tophe/EasyQuoteMaker");
+
+			language = languageDao.findByName("Java");
+			article.addLanguages(language);
+
+			language = languageDao.findByName("Spring");
+			article.addLanguages(language);
+
+			language = languageDao.findByName("Api Rest");
+			article.addLanguages(language);
+
+			articleRepo.save(article);
+
+			article =  new Article();
+			article.setTitle("MyWebSite");
+			article.setDescription("Ce site internet. Utilisation de Thymeleaf.");
+			article.setUrl("https://github.com/chris-tophe/MyWebSite");
+
+			language = languageDao.findByName("Java");
+			article.addLanguages(language);
+
+			language = languageDao.findByName("Spring");
+			article.addLanguages(language);
+
+			articleRepo.save(article);
+
 		};
 	}
 	

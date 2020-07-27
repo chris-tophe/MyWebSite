@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
@@ -118,8 +118,8 @@
 		        </li>
 	      	</ul>
       </div>
-    
-      <div th:id="'carouselControls'+${article.id}" class="carousel slide col-lg-3 row align-items-center" data-ride="carousel">
+
+      <div th:if="${#lists.size(article.photos) > 0}" th:id="'carouselControls'+${article.id}" class="carousel slide col-lg-3 row align-items-center" data-ride="carousel">
 		  <div class="carousel-inner">
 		    <div th:each="photo , iStat : ${article.photos}" th:class="${iStat.first}? 'active carousel-item' : ' carousel-item' ">
 		      <img class="d-block w-100" th:src="${photo.url}" th:alt="${photo.legend}">

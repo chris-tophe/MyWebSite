@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.chris-tophe</groupId>
 	<artifactId>rhapsode</artifactId>
-	<version>0.1.6</version>
+	<version>0.1.6.5</version>
 	<name>rhapsode</name>
 	<description>MyPersonalWebSite</description>
 
@@ -59,7 +59,12 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
